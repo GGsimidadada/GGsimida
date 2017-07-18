@@ -51,10 +51,15 @@
 			window.onload = function () {
 			    var ul = document.getElementById("scroll"),
 					lis = ul.getElementsByTagName("li");
-                setTimeout(function () {
-                    jsAnimate(ul, -lis[0].offsetHeight);
+                setInterval(function () {
+                    jsAnimate(ul, -lis[0].offsetHeight, function () {
+                        //调换文本顺序，将第一行换至最后一行，并将margintop初始化。
+						ul.append(ul.firstElementChild);
+						ul.style.marginTop = 0;
+                    });
                 }, 1000)
             };
+			
             function jsAnimate(elem, final, callback) {
 				var current, target, step;
 				current = parseInt(elem.style.marginTop) || 0;
@@ -68,8 +73,8 @@
 				    callback();
 				    return true;
 				}
-				setTimeout(function () {
-					jsAnimate(elem, final);
+                setTimeout(function () {
+					jsAnimate(elem, final, callback);
                 }, 15)
             }
 		</script >
