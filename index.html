@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang = "en" >
+	<head >
+		<meta charset = "UTF-8" >
+		<meta name = "description" content = "高浩然的简历，采用bootstrap+fullpage搭建，欢迎访问我的博客gaohaoran.me/blog" >
+		<meta name = "author" content = "高浩然" >
+		<meta name = "keywords" content = "web简历,前端简历,web前端" >
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title >高浩然的博客</title >
+		<link rel="stylesheet" href="./fullPage/css/jquery.fullPage.css">
+		<link rel="stylesheet" href="./base/bootstrap.min.css">
+		<link rel = "stylesheet" href = "./base/base.css" >
+		<!--<link rel="stylesheet" href="./font/iconfont.css">-->
+		<link rel = "stylesheet" href = "./welcome/css/index.css" >
+		<!--发送请求，用于获取用户地址信息-->
+		<script type = "text/JavaScript" src = "http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"
+				charset = "gb2312" ></script >
+		<script src = "welcome/js/welcome.js" ></script >
+		<!--[if It IE 9]>
+		<script src="./baseJs/html5shiv.js"></script>
+		<![end if]-->
+	</head >
+	<body >
+		<div id="shade"
+			 style="width: 100%;height: 100%;position: fixed;left: 0;top: 0;background-color: #fff;z-index: 999;"></div>
+		
+		<!--menu-->
+		
+		<nav class="navbar navbar-default">
+			<div class = "container" >
+				<div class="navbar-header">
+					<!--class="navbar-toggle collapsed"：说明在移动端会有手风琴菜单的效果-->
+					<!--data-toggle="collapse"：它是一个手风琴组件-->
+					<!--data-target="#bs-example-navbar-collapse-1":说明当前手风琴菜单是控制哪一个导航条的-->
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<!--class="sr-only"：屏幕阅读器-->
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href = "//gaohaoran.me/blog">
+						<div class = "myPic transition" >
+							<img src = "./welcome/img/touxiang.jpg" alt = "鸣人" title = "naruto" ></div >
+						<div class = "myName" >
+							<h1 >个人博客</h1 >
+						</div >
+					</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse menu-nav" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href = "#page1" >首页<span class="sr-only">(current)</span></a ></li >
+						<li ><a href = "#page2" >简介</a ></li >
+						<li ><a href = "#page3" >技能</a ></li >
+						<li ><a href = "#page4" >作品</a ></li >
+						<li ><a href = "#page5" >联系我</a ></li >
+					</ul>
+				</div>
+			</div >
+		</nav>
+		
+		
+		<!--fullPageScroll-->
+		<div id = "dowebok" class = "fullpage-wrapper container-fluid" >
+			<!--first-page : personal resume-->
+			<div class = "section row" id = "page-1" data-anchor = "page1" >
+				<div class = "page-2-resume col-xs-12 col-sm-8 col-sm-offset-2" >
+					<img src = "./welcome/img/touxiang.jpg" alt = "" id = "roll-in" >
+					<h4 ><span >十年后的你，一定会感谢现在努力的自己</span ></h4 >
+					<p >嗨，来自<span id = "getIP" ></span >的同学，欢迎来到我的主页</p >
+					<p >30秒后，在这个广袤的虚拟世界里，你又多了一个新朋友</p >
+					<p >我叫高浩然</p >
+					<p >你也和我一样，喜欢前端开发？</p >
+					<p >那就继续往下吧，我已经迫不及待的想向你展示我自己啦！</p >
+				</div >
+			</div >
+			
+			<!--second-page : personal introduce-->
+			<div class = "section row" id = "page-2" data-anchor = "page2" >
+				<div class = "col-xs-12 col-sm-8 col-sm-offset-2 page-3-introduce" >
+					<div class = "title" >
+						<h4 >关于我</h4 >
+						<i ></i >
+						<span >· About Me ·</span >
+					</div >
+					<ul class = "info clearfix" >
+						<li >
+							<div >
+								<img src = "./welcome/img/education.png" alt = "" >
+							</div >
+							<p >学历</p >
+							<p >本科</p >
+						</li >
+						<li >
+							<div >
+								<img src = "./welcome/img/location.png" alt = "" >
+							</div >
+							<p >坐标</p >
+							<p >南京</p >
+						</li >
+						<li >
+							<div >
+								<img src = "./welcome/img/age.png" alt = "" >
+							</div >
+							<p >年龄</p >
+							<p >27岁</p >
+						</li >
+						<li >
+							<div >
+								<img src = "./welcome/img/status.png" alt = "" >
+							</div >
+							<p >状态</p >
+							<p >求职</p >
+						</li >
+					</ul >
+					<div class = "experience" >
+						<p >自学能力强，每周至少写2篇博客放在个人网站</p >
+						<p >一年多工作经验，保质保量完成分配任务</p >
+						<p >重度代码强迫症，致力写出高效简洁的代码</p >
+						<p >绝不做伸手党，博客、论坛、百度、谷歌、聊天群……都是我攻克难题的坚强后盾</p >
+					</div >
+				</div >
+			</div >
+			
+			<!--third-page : personal skills-->
+			<div class = "section row" id = "page-3" data-anchor = "page3" >
+				<div class = "col-xs-12 col-sm-8 col-sm-offset-2 page-4-skills" >
+					<div class = "title" >
+						<h4 >专业技能</h4 >
+						<i ></i >
+						<span >· Professional Skills ·</span >
+					</div >
+					<ul class = "skills-list clearfix" >
+						<li >
+							<h6 >我都<strong >会</strong >啥：</h6 >
+							<ul class = "desc" >
+								<li >熟练掌握HTML+CSS+JS，开发符合W3C标准的页面</li >
+								<li >使用SASS、LESS等CSS预编译器，快速编写标准代码</li >
+								<li >熟悉JS原型链、作用域、闭包等概念，能用面向对象思想封装简单框架</li >
+								<li >熟练使用JQ，了解JQ早期原理，熟练使用Ajax与后端进行数据交互，使用Jsonp实现跨域请求</li >
+								<li >熟练使用BootStrap框架开发响应式页面，了解实现原理</li >
+							</ul >
+						</li >
+						<li >
+							<h6 >我<strong >不会</strong >啥：</h6 >
+							<ul class = "desc" >
+								<li >知难而退：“这个效果好难，我不会。” <strong >MyStyle：“哇，这个效果好酷，我要学！”</strong ></li >
+								<li >敷衍了事：“做成这样差不多了，无所谓。” <strong >MyStyle：”这里还能再优化一下，应该这样做……“</strong ></li >
+								<li >刚愎自用：“呵呵，这种代码我也会写。” <strong>MyStyle：“他的方法很新颖，我来研究一下！”</strong></li >
+							</ul >
+						</li >
+					</ul >
+				</div >
+			</div >
+			
+			<!--fourth-page : individual items-->
+			<div class = "section row" id = "page-4" data-anchor = "page4" >
+				<div class = "col-xs-12 col-sm-8 col-sm-offset-2 page-5-items" >
+					<div class = "title" >
+						<h4 >我的作品</h4 >
+						<i ></i >
+						<span >· My Production ·</span >
+					</div >
+					<div id = "stage" >
+						<ul class = "list" >
+							<li class = "list-3d" >
+								<div class = "img-container" >
+									<a href = "#" title = "点击查看" ><img src = "testImg/slidepic1.jpg" alt = "" ></a >
+								</div >
+							</li >
+							<li class = "list-3d" >
+								<div class = "img-container" >
+									<a href = "#" title = "点击查看" ><img src = "testImg/slidepic2.jpg" alt = "" ></a >
+								</div >
+							</li >
+							<li class = "list-3d" >
+								<div class = "img-container" >
+									<a href = "#" title = "点击查看" ><img src = "testImg/slidepic3.jpg" alt = "" ></a >
+								</div >
+							
+							</li >
+							<li class = "list-3d" >
+								<div class = "img-container" >
+									<a href = "#" title = "点击查看" ><img src = "testImg/slidepic4.jpg" alt = "" ></a >
+								</div >
+							
+							</li >
+							<li class = "list-3d" >
+								<div class = "img-container" >
+									<a href = "#" title = "点击查看" ><img src = "testImg/slidepic5.jpg" alt = "" ></a >
+								</div >
+							
+							</li >
+						</ul >
+						<div class = "icon icon-toPrev" ></div >
+						<div class = "icon icon-toNext" ></div >
+					</div >
+					<div class = "more" >
+						<p >各种JS小项目，请 <a href = "./JSdemo/JSdemo.html" >点击这里</a ></p >
+						<p >这是我的部分DEMO，更多作品请移步 <a href = "//gaohaoran.me/blog" >我的博客</a ></p >
+					</div >
+				</div >
+			</div >
+			
+			<!--fifth-page : contact me-->
+			<div class = "section row" id = "page-5" data-anchor = "page5" >
+				<div class = "col-xs-12 col-sm-8 col-sm-offset-2" >
+					<div class = "title" >
+						<h4 >联系我</h4 >
+						<i ></i >
+						<span >· Contact Me ·</span >
+					</div >
+					<div class = "my-info" >
+						<div class = "my-photo" >
+							<img src = "./welcome/img/myPhoto.png" alt = "高浩然的照片" >
+						</div >
+						<div class = "my-claim" >
+							<p >做自己喜欢的工作是一件无比开心的事</p >
+							<p >周围再来几个有趣的小伙伴，那感觉就更棒了</p >
+							<p >热爱学习，热爱前端</p >
+							<p >保持一颗谦卑的心，任何人都有比我更擅长的领域</p >
+							<p >想聊技术，聊工作，聊生活，欢迎与我联系：</p >
+							<p >e-mail：<span class = "number" >gaohaoran1990@gmail.com</span ></p >
+							<p >weChat：<span class = "number" >370976188</span ></p >
+						</div >
+					</div >
+				</div >
+			</div >
+		</div >
+		
+		
+		<script src = "fullPage/js/jquery-3.0.0.min.js" ></script >
+		<script src = "fullPage/js/jquery.fullPage.js" ></script >
+		<script src="./baseJs/bootstrap.min.js"></script>
+		<script >
+            
+            $(function () {
+                
+                //fullPage函数
+                $('#dowebok').fullpage({
+                    resize: true,
+                    scrollingSpeed: 500,
+                    afterRender: function () {
+                        $("#shade").css("display", "none");
+                        $(".page-2-resume h4, .page-2-resume p, .page-2-resume img, .navbar").css("opacity", 0);
+                        //第一屏动画
+                        $("#roll-in").css({
+                            "animation": "roll-in 1.5s ease-out, bounce 1s 1.5s"
+                        }).animate({
+                            "opacity": 1
+                        }, 1000, function () {
+                            $(".navbar").animate({
+                                "opacity": 1
+                            }, 4000);
+                            $(".page-2-resume h4").css({
+                                "width": 0,
+                                "opacity": 0
+                            }).animate({
+                                "width": "100%",
+                                "opacity": 1
+                            }, 1000, function () {
+                                $(".page-2-resume p").each(function (i, v) {
+                                    i % 2 === 0 ?
+                                        v.style.animation = "l-to-r 0.6s ease-out , show 0.6s ease-out forwards" :
+                                        v.style.animation = "r-to-l 0.6s ease-out , show 0.6s ease-out forwards"
+                                })
+                            });
+                        });
+                    },
+                    afterLoad: function (anchorLink, index) {
+                        
+                        $(".navbar-nav").children("li:eq("+
+							(index - 1) +")").addClass("active").siblings("li").removeClass("active");
+						
+                        //第二屏动画
+                        if (index === 2) {
+                            $(".info").fadeIn(function () {
+                                $(".experience").animate({
+                                    "width": "100%"
+                                }, function () {
+                                    $(".experience p").each(function (i, v) {
+                                        v.style.animation = "b-to-t 0.3s ease-out " + i * 0.5 +
+                                            "s, show 0.3s ease-out " +
+                                            i * 0.5 + "s forwards";
+                                    })
+                                })
+                            });
+                        }
+                        
+                        //第三屏动画
+                        if (index === 3) {
+                            $(".skills-list").addClass("bounceIn");
+                        }
+                        
+                        //第四屏动画
+                        if (index === 4) {
+                            $("#stage").css({
+                                "animation": "b-to-t 0.5s ease-out, show 0.5s ease-out forwards"
+                            });
+                            $(".more p").css({
+                                "animation": "t-to-b 0.5s ease-out 0.5s, show 0.5s ease-out 0.5s forwards"
+                            })
+                        }
+                        
+                        //第五屏
+                        if (index === 5) {
+                            $(".my-photo").css({
+                                "animation": "b-to-t 0.5s ease-out, show 0.5s ease-out forwards"
+                            });
+                            $(".my-claim p").each(function (i, v) {
+                                i++;
+                                $(this).css({
+                                    "animation": "t-to-b 0.5s ease-out " + 0.5 * i +
+                                    "s, show 0.5s ease-out " + 0.5 * i + "s forwards"
+                                })
+                            })
+                        }
+                    }
+                });
+                
+                //写入地址
+                var IPtimer = setInterval(function () {
+                    if (remote_ip_info) {
+                        clearInterval(IPtimer);
+                        var s = remote_ip_info['province'] + remote_ip_info['city'];
+                        document.getElementById("getIP").innerHTML = s;
+                    }
+                }, 500);
+            })
+		
+		</script >
+		</body >
+</html >
