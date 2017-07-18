@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = "en" >
+	<head >
+		<meta charset = "UTF-8" >
+		<title >Title</title >
+		<style>
+			#box {
+				margin: 0 auto;
+				width: 400px;
+				height: 200px;
+				text-align: center;
+				background-color: #d8ebee;
+				padding-top: 50px;
+			}
+			
+			input {
+				padding: 5px;
+			}
+		</style>
+	</head >
+	<body >
+		<div id="box">
+			<p>勾选保存登录信息，提交后会将输入的信息存入localStorage，再次刷新会显示上次输入的信息。</p>
+			<form action = "" >
+			用户名：<input type = "text" name="username" id="txt"><br >
+			&nbsp&nbsp&nbsp密码：<input type = "password" name="password" id = "psd" ><br >
+			<input type = "checkbox" id = "save" >保存登录信息<br >
+			<input type = "button" value="提交" id="sub">
+			</form >
+		</div>
+	</body >
+	<script >
+		var txt = document.getElementById("txt"),
+			psd = document.getElementById("psd"),
+			save = document.getElementById("save"),
+			sub = document.getElementById("sub");
+		
+		if (window.localStorage.getItem("username")) save.checked = "checked";
+		txt.value = window.localStorage.getItem("username");
+		psd.value = window.localStorage.getItem("password");
+		
+		
+		sub.onclick = function () {
+		    if (save.checked) {
+		        window.localStorage.setItem("username", txt.value);
+		        window.localStorage.setItem("password", psd.value);
+			} else {
+		        window.localStorage.removeItem("username");
+		        window.localStorage.removeItem("password");
+			}
+		}
+	</script >
+</html >

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang = "en" >
+	<head >
+		<meta charset = "UTF-8" >
+		<title >Title</title >
+		<style>
+			#box {
+				margin: 0 auto;
+				width: 400px;
+				height: 200px;
+				text-align: center;
+				background-color: #d8ebee;
+				padding-top: 50px;
+			}
+			
+			input {
+				padding: 5px;
+			}
+		</style>
+	</head >
+	<body >
+		<div id="box">
+			<p>只允许用户输入数字</p>
+			正常的： <input type = "text" ><br >
+			禁止的： <input type = "text" id="txt" >
+		</div>
+	</body >
+	<script >
+		var txt = document.getElementById("txt");
+		
+		txt.onkeyup = function () {
+			txt.value = txt.value.replace(/\D*/g, "");
+        }
+	
+	</script >
+</html >

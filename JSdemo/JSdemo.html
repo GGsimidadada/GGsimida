@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang = "en" >
+	<head >
+		<meta charset = "UTF-8" >
+		<meta name="viewport"
+			  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title >JSdemo</title >
+		<link rel="stylesheet" href="../base/base.css">
+		<link rel="stylesheet" href="../font/iconfont.css">
+		<link rel="stylesheet" href="../base/bootstrap.min.css">
+		<style>
+			body {
+				overflow: hidden;
+				word-break: break-all;
+			}
+			
+			#container {
+				position: fixed;
+				top: 0;
+				left: 0;
+				height: 100%;
+			}
+			
+			#box {
+				height: 100%;
+				overflow: auto;
+				background-color: #eee;
+				padding: 5px;
+				width: 190px;
+			}
+			iframe {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box h1 {
+				font-size: 16px;
+				font-weight: 700;
+				margin-bottom: 20px;
+			}
+			#box #first-ul {
+				margin-left: 15px;
+				cursor: pointer;
+			}
+			#box #first-ul>li {
+				list-style: decimal;
+			}
+			#box #first-ul>li h4 {
+				font-size: 14px;
+			}
+			#box #first-ul>li ul{
+				display: none;
+				padding-left: 10px;
+				list-style: circle;
+			}
+			#box #first-ul>li a{
+				font-size: 12px;
+				text-decoration: none;
+				color: #333;
+			}
+			#container i {
+				cursor: pointer;
+				font-size: 40px;
+				text-align: center;
+				position: absolute;
+				border: 1px solid #cccccc;
+				width: 50px;
+				line-height: 50px;
+				background-color: rgba(25, 25, 25, 0.5);
+				top: 50%;
+				margin-top: -25px;
+				right: -50px;
+				color: #fff;
+				-webkit-border-radius: 0 10px 10px 0;
+				-moz-border-radius: 0 10px 10px 0;
+				border-radius: 0 10px 10px 0;
+			}
+		
+		</style>
+		<script src="../fullPage/js/jquery-3.0.0.min.js"></script>
+	</head >
+	<body >
+		<div id="container" class="slide-out">
+			<div id="box">
+				<h1>工作中常用的JSdemo</h1>
+				<ol id="first-ul">
+					<li  class="first-li">
+						<h4>表单常用代码</h4>
+						<ul class="second-ul">
+							<li class="second-li"><a href = "./demo01/1.html" >去除字符串左右的空格</a ></li>
+							<li class="second-li"><a href = "./demo01/2.html" >记住用户登录信息</a ></li>
+							<li class="second-li"><a href = "./demo01/3.html" >验证用户是否输入</a ></li>
+							<li class="second-li"><a href = "./demo01/4.html" >禁止用户输入</a ></li>
+							<li class="second-li"><a href = "./demo01/5.html" >关闭用户中文输入法</a ></li>
+							<li class="second-li"><a href = "./demo01/6.html" >禁止用户复制粘贴</a ></li>
+							<li class="second-li"><a href = "./demo01/7.html" >限制只能输入数字</a ></li>
+							<li class="second-li"><a href = "./demo01/8.html" >限制字符串长度</a ></li>
+							<li class="second-li"><a href = "./demo01/9.html" >仿微博提示可输入剩余字数</a ></li>
+							<li class="second-li"><a href = "./demo01/10.html" >换行文本自动滚动</a ></li>
+							<li class="second-li"><a href = "./demo01/11.html" >Ctrl+Return提交表单</a ></li>
+							<li class="second-li"><a href = "./demo01/12.html" >文本内容进行关键字过滤</a ></li>
+							<li class="second-li"><a href = "./demo01/13.html" >全选反选少选复选框</a ></li>
+							<li class="second-li"><a href = "./demo01/14.html" >动态操作下拉选项</a ></li>
+							<li class="second-li"><a href = "./demo01/15.html" >级联菜单</a ></li>
+							<li class="second-li"><a href = "./demo01/16.html" >可添加的下拉选项</a ></li>
+						</ul>
+					</li >
+					<li  class="first-li">
+						<h4>常用图片相关代码</h4>
+						<ul class="second-ul">
+							<li class="second-li"><a href = "#" >鼠标移入移出改变透明度</a ></li>
+							<li class="second-li"><a href = "#" >图片放大镜效果</a ></li>
+							<li class="second-li"><a href = "#" >点击图片逐渐放大</a ></li>
+						</ul>
+					</li >
+					<li  class="first-li">
+						<h4>内容展示常用代码</h4>
+						<ul class="second-ul">
+							<li class="second-li"><a href = "#" >单元行上鼠标悬停提示</a ></li>
+							<li class="second-li"><a href = "#" >无刷新切换皮肤，刷新后保存</a ></li>
+							<li class="second-li"><a href = "#" >隔行换色鼠标经过换色</a ></li>
+							<li class="second-li"><a href = "#" >添加或删除表格行</a ></li>
+							<li class="second-li"><a href = "#" >可拖动的弹出层</a ></li>
+							<li class="second-li"><a href = "#" >选项卡轮播</a ></li>
+							<li class="second-li"><a href = "#" >模拟滚动条</a ></li>
+							<li class="second-li"><a href = "#" >缓动的对联广告</a ></li>
+							<li class="second-li"><a href = "#" >拖动滑块验证</a ></li>
+						</ul>
+					</li >
+					<li  class="first-li">
+						<h4>常用图片轮换</h4>
+						<ul class="second-ul">
+							<li class="second-li"><a href = "#" >图片轮换</a ></li>
+							<li class="second-li"><a href = "#" >遮罩下拉</a ></li>
+							<li class="second-li"><a href = "#" >榜单tab切换</a ></li>
+							<li class="second-li"><a href = "#" >css3弹出层</a ></li>
+							<li class="second-li"><a href = "#" >米4活动页面</a ></li>
+							<li class="second-li"><a href = "#" >百度爱玩-图片轮换</a ></li>
+							<li class="second-li"><a href = "#" >百度微购-中秋送好礼</a ></li>
+							<li class="second-li"><a href = "#" >商品分类</a ></li>
+							<li class="second-li"><a href = "#" >渐显tab菜单2</a ></li>
+							<li class="second-li"><a href = "#" >经典图片轮换-单个滚动</a ></li>
+							<li class="second-li"><a href = "#" >经典图片轮换-整个翻页</a ></li>
+						</ul>
+					</li >
+					<li  class="first-li">
+						<h4>移动端效果</h4>
+						<ul class="second-ul">
+							<li class="second-li"><a href = "#" >选项卡切换</a ></li>
+						</ul>
+					</li >
+					<li  class="first-li">
+						<h4>时间日期效果</h4>
+						<ul class="second-ul">
+							<li class="second-li"><a href = "#" >全日历</a ></li>
+							<li class="second-li"><a href = "#" >canvas实现小时钟</a ></li>
+						</ul>
+					</li >
+					<li  class="first-li">
+						<h4>其他练习</h4>
+						<ul class="second-ul">
+							<li class="second-li"><a href = "#" >乘法口诀输出</a ></li>
+						</ul>
+					</li >
+				</ol >
+			</div>
+			<i class="iconfont icon-xiangzuo1" id="click"></i>
+		</div>
+		
+	
+		<iframe src = "./demo01/1.html" frameborder = "0" scrolling="auto" id="iframe"></iframe >
+		
+		
+		<script >
+			
+			$(function () {
+			    
+			    //列表动画
+                var s_Ul = $(".second-ul"),
+                    f_Li = $(".first-li");
+                
+                f_Li.each(function (i, v) {
+                    this.index = i;
+                });
+                $(".first-li h4").click(function () {
+                    var that = this.parentNode;
+                    $(s_Ul).each(function (i, v) {
+                        if (that.index !== i && this.style.display !== "none") {
+                            $(this).slideUp(200);
+                        }
+                    });
+                    $(s_Ul[that.index]).slideToggle(200);
+                });
+                
+                var click = $("#click"),
+					links = $(".second-li a"),
+					container = $("#container"),
+                    iframe = document.getElementById("iframe"),
+					flag = true;
+                click.click(function () {
+                    if (flag) {
+                        container.animate({
+                            "left" : -190
+                        }, function () {
+							click.removeClass("icon-xiangzuo1").addClass("icon-xiangyou1")
+                        })
+					}
+					else {
+                        container.animate({
+                            "left" : 0
+                        }, function () {
+                            click.removeClass("icon-xiangyou1").addClass("icon-xiangzuo1")
+                        })
+					}
+                    flag = !flag;
+                });
+                links.click(function (e) {
+					var event = event || window.event;
+					stopDefault(event);
+                    iframe.src = this.href;
+                    container.animate({
+						"left" : -190
+					}, function () {
+                        click.removeClass("icon-xiangzuo1").addClass("icon-xiangyou1");
+                    });
+					flag = !flag
+                });
+                //阻止a链接默认跳转
+				function stopDefault(e) {
+					if (e.preventDefault) {
+					    e.preventDefault();
+					} else {
+					    window.event.returnValue = false;
+					}
+                }
+                
+                
+                //Iframe窗口自适应宽高
+                function changeIframeSize() {
+					var h = document.documentElement.clientHeight;
+						w = iframe.parentNode.clientWidth;
+					iframe.height = h + "px";
+					iframe.width = w + "px";
+                }
+                changeIframeSize();
+                window.onresize = function () {
+					changeIframeSize();
+                }
+            });
+		</script >
+	</body >
+</html >

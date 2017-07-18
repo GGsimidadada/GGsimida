@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "en" >
+	<head >
+		<meta charset = "UTF-8" >
+		<title >Title</title >
+		<style>
+			#box {
+				margin: 0 auto;
+				width: 400px;
+				height: 200px;
+				text-align: center;
+				background-color: #d8ebee;
+				padding-top: 50px;
+			}
+			
+			input {
+				padding: 5px;
+			}
+		</style>
+	</head >
+	<body >
+		<div id="box">
+			<p>切换文本框的输入状态</p>
+			用户名：<input type = "text" id="txt"><br >
+			密码吗：<input type = "password" id = "psd"><br >
+			<input type = "button" value = "点我切换" id="btn">
+		</div>
+	</body >
+	<script >
+		var txt = document.getElementById("txt"),
+			psd = document.getElementById("psd"),
+			btn = document.getElementById("btn");
+		
+		btn.onclick = function () {
+			txt.disabled = psd.disabled = !txt.disabled;
+        }
+		
+	</script >
+</html >

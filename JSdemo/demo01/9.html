@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = "en" >
+	<head >
+		<meta charset = "UTF-8" >
+		<title >JSdemo-仿微博提示剩余字数</title >
+		<style>
+			#box {
+				margin: 0 auto;
+				width: 400px;
+				height: 200px;
+				text-align: center;
+				background-color: #d8ebee;
+				padding-top: 50px;
+				vertical-align: middle;
+			}
+			
+			textarea {
+				padding: 5px;
+				width: 200px;
+				height: 100px;
+				border: 1px solid #cccccc;
+				resize: none;
+				outline: none;
+				word-break: break-all;
+			}
+			
+			#num {
+				width: 24px;
+			}
+		</style>
+	</head >
+	<body >
+		<div id="box">
+			<p>仿微博提示剩余可输入字数</p>
+			<textarea name = "" id = "textarea" maxlength="100" placeholder="请输入您的评论，最多100个字"></textarea >
+			<div>您还可以输入<span id="length"></span>个字</div>
+		</div>
+		
+		<script >
+			window.onload = function () {
+				var textarea = document.getElementById("textarea"),
+					length = document.getElementById("length"),
+					lastLength = textarea.maxLength;
+				length.innerHTML = lastLength;
+				
+				textarea.onkeyup = function () {
+                    lastLength = textarea.maxLength - textarea.value.length;
+					length.innerHTML = lastLength;
+                }
+            }
+		</script >
+	</body >
+</html >

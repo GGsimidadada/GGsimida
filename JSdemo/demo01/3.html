@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang = "en" >
+	<head >
+		<meta charset = "UTF-8" >
+		<title >Title</title >
+		<style>
+			#box {
+				margin: 0 auto;
+				width: 400px;
+				height: 200px;
+				text-align: center;
+				background-color: #d8ebee;
+				padding-top: 50px;
+			}
+			
+			input {
+				padding: 5px;
+			}
+			
+			#nopsd, #nousn {
+				color: #f00;
+			}
+		</style>
+	</head >
+	<body >
+		<div id="box">
+			<p>判断用户是否输入</p>
+			用户名：<input type = "text" id="txt" placeholder="请输入用户名"><span id="nousn"></span><br >
+			密码：<input type = "password" id="psd" placeholder="请输入密码"><span id="nopsd"></span><br >
+			<input type = "button" id="btn" value="登录"><br >
+		</div>
+	</body >
+	<script >
+		var txt = document.getElementById("txt"),
+			psd = document.getElementById("psd"),
+			btn = document.getElementById("btn"),
+			noUsn = document.getElementById("nousn"),
+			noPsd = document.getElementById("nopsd");
+		
+		btn.onclick = function () {
+			if (!txt.value) {
+			    noUsn.innerHTML = "请输入用户名！";
+			} else {
+                noUsn.innerHTML = "";
+			}
+			if (!psd.value) {
+			    noPsd.innerHTML = "请输入密码！";
+			} else {
+                noPsd.innerHTML = "";
+			}
+        }
+		
+		
+	</script >
+</html >

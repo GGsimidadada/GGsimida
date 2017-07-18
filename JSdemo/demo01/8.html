@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang = "en" >
+	<head >
+		<meta charset = "UTF-8" >
+		<title >Title</title >
+		<style>
+			#box {
+				margin: 0 auto;
+				width: 400px;
+				height: 200px;
+				text-align: center;
+				background-color: #d8ebee;
+				padding-top: 50px;
+				vertical-align: middle;
+			}
+			
+			input {
+				padding: 5px;
+			}
+			
+			#num {
+				width: 24px;
+			}
+		</style>
+	</head >
+	<body >
+		<div id="box">
+			<p>限制输入的最大长度，默认为20个字符</p>
+			<input type = "text" maxlength="20" id="txt"><br >
+			<input type = "text" value="20" id="num" maxlength="3"><button id="set">设置最大长度</button>
+		</div>
+	</body >
+	<script >
+		var txt = document.getElementById("txt"),
+			num = document.getElementById("num"),
+			set = document.getElementById("set");
+		
+		num.onkeyup = function () {
+			num.value = num.value.replace(/[^0-9]*/g, "")
+        };
+		set.onclick = function () {
+		    txt.maxLength = num.value;
+            console.log(txt.maxLength);
+        }
+		
+	</script >
+</html >

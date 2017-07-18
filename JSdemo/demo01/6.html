@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "en" >
+	<head >
+		<meta charset = "UTF-8" >
+		<title >Title</title >
+		<style>
+			#box {
+				margin: 0 auto;
+				width: 400px;
+				height: 200px;
+				text-align: center;
+				background-color: #d8ebee;
+				padding-top: 50px;
+			}
+			
+			input {
+				padding: 5px;
+			}
+		</style>
+	</head >
+	<body >
+		<div id="box">
+			<p>禁止用户在文本框中复制粘贴</p>
+			正常的：<input type = "text"><br >
+			禁止的：<input type = "text" id="dis">
+		</div>
+	</body >
+	<script >
+		var dis = document.getElementById("dis");
+		
+		dis.oncopy = function () {
+			return false;
+        };
+        dis.onpaste = function () {
+			return false;
+        }
+		
+	</script >
+</html >
