@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang = "en" >
+	<head >
+		<meta charset = "UTF-8" >
+		<title >Title</title >
+		<link rel="stylesheet" href="./base/base.css">
+		<link rel="stylesheet" href="./welcome/css/index.css">
+		<script src="fullPage/js/jquery-3.0.0.min.js"></script>
+		<script type="text/JavaScript" src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js" charset="gb2312"></script>
+		<style>
+			body {
+				background-color: #51ccca;
+			}
+			
+			#stage {
+				width: 1080px;
+				margin: 30px auto 50px;
+				height: 300px;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			#stage::after {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				background-image: linear-gradient(to top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 30%);
+				z-index:9;
+			}
+			
+			#stage .list {
+				position: relative;
+				width: 300px;
+				left: 50%;
+				transform: translateX(-50%);
+				perspective: 1000px;
+				transform-style: preserve-3d;
+				perspective-origin: 50% 50%;
+			}
+			
+			#stage .list li {
+				width: 100%;
+				position: absolute;
+				top: 0;
+				transition: all 0.6s;
+			}
+			
+			#stage .list li:nth-of-type(1) {
+				z-index: 1;
+				transform: rotateY(15deg) translateZ(-100px);
+				left: -400px;
+			}
+			#stage .list li:nth-of-type(2) {
+				z-index: 2;
+				transform: rotateY(20deg)  translateZ(-50px);
+				left: -200px;
+			}
+			#stage .list li:nth-of-type(3) {
+				z-index: 3;
+				transform: rotateY(0deg) translateZ(0px);
+				left: 0;
+			}
+			#stage .list li:nth-of-type(4) {
+				 z-index: 2;
+				 transform: rotateY(-20deg)  translateZ(-50px);
+				 left: 200px;
+			 }
+			#stage .list li:nth-of-type(5) {
+				z-index: 1;
+				transform: rotateY(-15deg)  translateZ(-100px);
+				left: 400px;
+			}
+			
+			
+			#stage .list li img {
+				width: 300px;
+			}
+			
+			#select .icon-list {
+				margin-top: 130px;
+				width: 100%;
+				height: 40px;
+				position: relative;
+			}
+			
+			#select .icon-list .toPrev,
+			#select .icon-list .toNext {
+				width: 40px;
+				height: 40px;
+				position: absolute;
+				cursor: pointer;
+				z-index: 99;
+				transform: rotate(45deg);
+			}
+			
+			#select .icon-list .toPrev {
+				left: 30px;
+				border-left: 2px solid #fff000;
+				border-bottom: 2px solid #fff000;
+			}
+			
+			#select .icon-list .toNext {
+				right: 30px;
+				border-top: 2px solid #fff000;
+				border-right: 2px solid #fff000;
+			}
+			
+		</style>
+	</head >
+	<body >
+			<div id="stage">
+				<ul class="list">
+					<li class="list-3d">
+						<img src = "testImg/slidepic1.jpg" alt = "" >
+						
+					</li >
+					<li class="list-3d">
+						<img src = "testImg/slidepic2.jpg" alt = "" >
+						
+					</li >
+					<li class="list-3d">
+						<img src = "testImg/slidepic3.jpg" alt = "" >
+						
+					</li >
+					<li class="list-3d">
+						<img src = "testImg/slidepic4.jpg" alt = "" >
+						
+					</li >
+					<li class="list-3d">
+						<img src = "testImg/slidepic5.jpg" alt = "" >
+						
+					</li >
+				</ul>
+				<div id="select">
+					<ul class="icon-list">
+						<li class="toPrev"></li>
+						<li class="toNext"></li>
+					</ul>
+				</div>
+			</div>
+			<span id="getIP"></span>
+	</body >
+	
+	<script >
+        window.onload = function () {
+            var img = document.getElementsByClassName("list-3d"), cImg, eImg;
+            var arr = [];
+            for (var i=0; i<img.length; i++) {
+                eImg = img[i].firstElementChild;
+                cImg = eImg.cloneNode(true);
+                eImg.parentNode.appendChild(cImg);
+                cImg.style.transform = "rotateX(180deg)";
+                cImg.className = "inverted";
+            }
+            
+		//样式配置单
+        var config = [
+			{
+                zIndex: 1,
+                transform: "rotateY(15deg) translateZ(-100px)",
+        		left: "-400px"
+			},
+            {
+                zIndex: 2,
+                transform: "rotateY(20deg)  translateZ(-50px)",
+                left: "-200px"
+            },
+            {
+                zIndex: 3,
+                transform: "rotateY(0deg) translateZ(0px)",
+                left: "0"
+            },
+            {
+                zIndex: 2,
+                transform: "rotateY(-20deg)  translateZ(-50px)",
+                left: "200px"
+            },
+            {
+                zIndex: 1,
+                transform: "rotateY(-15deg)  translateZ(-100px)",
+                left: "400px"
+            }
+		];
+    		//防止点击过快造成图片重叠
+            var flag = true;
+            //点击更改样式单顺序，重新分配给每个li
+            $(".icon-list .toPrev").click(function () {
+                if (flag) {
+                    flag = false;
+                    config.unshift(config.pop());
+                    $(".list li").each(function (i, v) {
+                        $(v).animate({}, "swing", function () {
+                            $(this).css(config[i]);
+                            setTimeout(function () {
+                                flag = true;
+                            }, 500)
+                        });
+                    });
+				}
+            });
+            $(".icon-list .toNext").click(function () {
+                if (flag) {
+                    flag = false;
+                    config.push(config.shift());
+                    $(".list li").each(function (i, v) {
+                        $(v).animate({}, "swing", function () {
+                            $(this).css(config[i]);
+                            setTimeout(function () {
+                                flag = true;
+                            }, 500);
+                        });
+                    });
+                }
+            });
+        };
+        function ipmsg() {
+            var s = remote_ip_info['country']  + remote_ip_info['province']+ remote_ip_info['city'];
+            document.getElementById("getIP").innerHTML = s;
+        }
+        ipmsg();
+	</script >
+
+	<script type="text/javascript">
+ 
+	</script>
+</html >
